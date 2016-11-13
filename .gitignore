@@ -1,17 +1,24 @@
+/captures
+.externalNativeBuild
+
+gradle.properties
+
 # Built application files
 *.apk
 *.ap_
 
-# Files for the ART/Dalvik VM
+# Files for the Dalvik VM
 *.dex
 
 # Java class files
 *.class
 
+# Make files
+*.mk
+
 # Generated files
 bin/
 gen/
-out/
 
 # Gradle files
 .gradle/
@@ -26,15 +33,9 @@ proguard/
 # Log Files
 *.log
 
-# Android Studio Navigation editor temp files
-.navigation/
-
-# Android Studio captures folder
-captures/
-
-# Intellij
+# Android Studio & IntelliJ
+.idea/
 *.iml
-.idea/workspace.xml
 
-# Keystore files
-*.jks
+.DS_Store
+.navigation/
