@@ -1,5 +1,6 @@
 package com.globant.android101.adapters;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,15 +9,17 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.globant.android101.ImageDialog;
 import com.globant.android101.R;
 import com.globant.android101.model.Item;
-import com.squareup.picasso.Callback;
+import com.globant.android101.utils.ImageLoadedCallback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>{
 
@@ -33,7 +36,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
     }
 
     @Override
-    public void onBindViewHolder(PhotoViewHolder viewHolder, int position) {
+    public void onBindViewHolder(final PhotoViewHolder viewHolder, int position) {
         final Item imageInfo = items.get(position);
 
         viewHolder.id.setText(String.valueOf(imageInfo.getId()));
@@ -43,8 +46,8 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
                 .into(viewHolder.image,  new ImageLoadedCallback(viewHolder.progressBar) {
                     @Override
                     public void onSuccess() {
-                        if (this.progressBar != null) {
-                            this.progressBar.setVisibility(View.GONE);
+                        if (viewHolder.progressBar != null) {
+                            viewHolder.progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -66,28 +69,17 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
         @BindView(R.id.image_url) TextView urlText;
         @BindView(R.id.image_id) TextView id;
         @BindView(R.id.progressBar) ProgressBar progressBar;
+        Activity activity;
 
         public PhotoViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-        }
-    }
-
-    private class ImageLoadedCallback implements Callback {
-        ProgressBar progressBar;
-
-        public  ImageLoadedCallback(ProgressBar progBar){
-            progressBar = progBar;
+            activity = (Activity) itemView.getContext();
         }
 
-        @Override
-        public void onSuccess() {
-
-        }
-
-        @Override
-        public void onError() {
-
+        @OnClick(R.id.image_thumbnail)
+        public void onImageClick() {
+            new ImageDialog(activity, Integer.parseInt(id.getText().toString())).show();
         }
     }
 }

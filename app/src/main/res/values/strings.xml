@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android 101</string>
+    <string name="back">Cerrar</string>
 </resources>

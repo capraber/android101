@@ -15,10 +15,15 @@ public class PhotoPresenter {
 
         this.model = model;
         this.view = view;
+        init();
+    }
+
+    private void init() {
+        model.getItemList();
     }
 
     @Subscribe
-    public void onLoginSuccessEvent(GetItemsSuccessEvent event) {
+    public void onItemsSuccessEvent(GetItemsSuccessEvent event) {
         view.setAdapter(new PhotoAdapter(event.getItemList()));
     }
 }

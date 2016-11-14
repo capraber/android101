@@ -1,8 +1,9 @@
 package com.globant.android101.mvp.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.globant.android101.MainActivity;
 import com.globant.android101.R;
@@ -16,11 +17,8 @@ import butterknife.ButterKnife;
 
 public class PhotoView extends ActivityView {
 
-    public PhotoView(AppCompatActivity activity) {
-        super(activity);
-    }
-
     @BindView(R.id.my_recycler_view) RecyclerView recyclerView;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
 
     public PhotoView(MainActivity activity) {
         super(activity);
@@ -32,6 +30,7 @@ public class PhotoView extends ActivityView {
     }
 
     public void setAdapter(PhotoAdapter adapter) {
+        progressBar.setVisibility(View.GONE);
         recyclerView.setAdapter(adapter);
         recyclerView.invalidate();
     }

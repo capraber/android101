@@ -12,7 +12,13 @@ import retrofit2.Response;
 
 public class PhotoModel {
 
-    public PhotoModel(final Bus bus) {
+    private Bus bus;
+
+    public PhotoModel(Bus bus) {
+        this.bus = bus;
+    }
+
+    public void getItemList() {
         ItemClient client = ServiceGenerator.createService(ItemClient.class);
 
         Call<ItemList> call =
@@ -21,7 +27,6 @@ public class PhotoModel {
         call.enqueue(new Callback<ItemList>() {
             @Override
             public void onResponse(Call<ItemList> call, Response<ItemList> response) {
-                ItemList images =response.body();
                 bus.post(new GetItemsSuccessEvent(response.body()));
             }
 
