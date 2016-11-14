@@ -25,3 +25,8 @@ Ese proyecto se realizo utilizando las siguientes librerías:
 - [Retrofit](https://square.github.io/retrofit/)
 - [Butterknife](http://jakewharton.github.io/butterknife/)
 - [Picasso](http://square.github.io/picasso/)
+
+## Imagenes
+
+![alt tag](https://github.com/capraber/android101/blob/master/1.MainScreen.png)
+![alt tag](https://github.com/capraber/android101/blob/master/2.Dialog.png)
