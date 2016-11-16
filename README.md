@@ -5,10 +5,9 @@ La aplicación consume desde el siguiente end point [splashbase](http://www.spla
 
 ## Modo de uso
 
-Para reutilizar esta aplicación con cualquier otro end poitnseguur los siguientes pasos:
+Para reutilizar esta aplicación con cualquier otro end point seguir los siguientes pasos:
 
-1. Cambiar en el archivo build.gradle la entrada  "API_URL" por la url deseada
- buildConfigField "String", "API_URL", "\"http://www.splashbase.co\""
+1. Al buildConfigField definido en el archivo build.gradle, llamado "API_URL" cambiarle la url deseada. Ejemplo:  buildConfigField "String", "API_URL", "\"http://www.otherurl.com\""
 
 2. Crear una clase al estilo ItemClient la cual contenga la ruta y el método HTTP necesario.
 ejemplo
