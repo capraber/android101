@@ -1,6 +1,6 @@
 ## ANDROID 101
 
-Este ejemplo de proyecto pretende demostrar como consumir datos desde un **end point** y mostrar el contenido del mismo por pantalla como una lista de **cardviews**.
+Este proyecto pretende demostrar como consumir datos desde un **end point** y mostrar el contenido del mismo por pantalla como una lista de **cardviews**.
 La aplicación consume desde el siguiente end point [splashbase](http://www.splashbase.co/api)
 
 ## Modo de uso
