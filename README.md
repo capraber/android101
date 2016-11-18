@@ -3,6 +3,10 @@
 Este proyecto pretende demostrar como consumir datos desde un **end point** y mostrar el contenido del mismo por pantalla como una lista de **cardviews**.
 La aplicación consume desde el siguiente end point [splashbase](http://www.splashbase.co/api)
 
+## Instalación del ambiente
+Seguir los pasos del instructivo oficial de android developer para instalar el Android Studio
+- [Instalar AS](https://developer.android.com/studio/install.html?hl=es-419)
+
 ## Modo de uso
 
 Para reutilizar esta aplicación con cualquier otro end point seguir los siguientes pasos:
@@ -16,6 +20,10 @@ ejemplo
 
 3. Crear un modelo de datos que soporte los items que retornara el llamado rest.
 4. Modificar/ crear la vista (cards_layout.xml) y el adapter (PhotoAdapter.java) para soportar los elementos que desee mostrar por pantalla.
+
+## Como ejecutar el proyecto en un dispositivo (real o emulador)
+Seguir los pasos de la pagina oficial de android developer
+- [Ejecutar la aplicación](https://developer.android.com/training/basics/firstapp/running-app.html?hl=es-419)
 
 ## Librerías
 
