@@ -1,13 +1,14 @@
 package com.globant.android101;
 
-import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 
 import com.globant.android101.mvp.model.ImageDialogModel;
 import com.globant.android101.mvp.presenter.ImageDialogPresenter;
 import com.globant.android101.mvp.view.ImageDialogView;
 import com.globant.android101.utils.BusProvider;
+import com.globant.android101.utils.ServiceUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -16,8 +17,8 @@ public class ImageDialog extends Dialog {
     private ImageDialogPresenter presenter;
     private int id;
 
-    public ImageDialog(Activity activity, int id) {
-        super(activity);
+    public ImageDialog(Context context, int id) {
+        super(context);
         this.id = id;
     }
 
@@ -29,7 +30,7 @@ public class ImageDialog extends Dialog {
         setTitle(null);
         setCancelable(false);
 
-        presenter = new ImageDialogPresenter(new ImageDialogView(this), new ImageDialogModel(BusProvider.getInstance()), id);
+        presenter = new ImageDialogPresenter(new ImageDialogView(this), new ImageDialogModel(ServiceUtils.getItemService(), id));
     }
 
 
