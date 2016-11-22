@@ -1,6 +1,5 @@
 package com.globant.android101.adapters;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,17 +68,15 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
         @BindView(R.id.image_url) TextView urlText;
         @BindView(R.id.image_id) TextView id;
         @BindView(R.id.progressBar) ProgressBar progressBar;
-        Activity activity;
 
         public PhotoViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            activity = (Activity) itemView.getContext();
         }
 
         @OnClick(R.id.image_thumbnail)
-        public void onImageClick() {
-            new ImageDialog(activity, Integer.parseInt(id.getText().toString())).show();
+        public void onImageClick(View view) {
+            new ImageDialog(view.getContext(), Integer.parseInt(id.getText().toString())).show();
         }
     }
 }

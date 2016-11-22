@@ -9,19 +9,18 @@ public class ImageDialogPresenter {
     private ImageDialogView view;
     private ImageDialogModel model;
 
-    public ImageDialogPresenter(ImageDialogView view, ImageDialogModel model, int id) {
+    public ImageDialogPresenter(ImageDialogView view, ImageDialogModel model) {
         this.view = view;
         this.model = model;
-        init(id);
+        init();
     }
 
-    private void init(int id) {
-        model.getItem(id);
+    private void init() {
+        model.getItem(model.getId());
     }
 
     @Subscribe
     public void onItemsSuccessEvent(GetItemEvent event) {
-
         view.display(event.getItem().getLarge_url());
     }
 

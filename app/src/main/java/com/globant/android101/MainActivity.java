@@ -7,6 +7,7 @@ import com.globant.android101.mvp.model.PhotoModel;
 import com.globant.android101.mvp.presenter.PhotoPresenter;
 import com.globant.android101.mvp.view.PhotoView;
 import com.globant.android101.utils.BusProvider;
+import com.globant.android101.utils.ServiceUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (presenter == null) {
-            presenter = new PhotoPresenter(new PhotoModel(BusProvider.getInstance()), new PhotoView(this));
+            presenter = new PhotoPresenter(new PhotoModel(ServiceUtils.getItemService()), new PhotoView(this));
         }
     }
 
