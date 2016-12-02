@@ -20,12 +20,11 @@ ejemplo
 
 3. Crear un modelo de datos que soporte los items que retornara el llamado rest.
 4. Modificar/ crear la vista (cards_layout.xml) y el adapter (PhotoAdapter.java) para soportar los elementos que desee mostrar por pantalla.
+5. Por ultimo la aplicación cuenta con un ejemplo de como utilizar google maps al presionar el botón del mapa a la izquierda de la pantalla.
 
 ## Como ejecutar el proyecto en un dispositivo (real o emulador)
 Seguir los pasos de la pagina oficial de android developer
 - [Ejecutar la aplicación](https://developer.android.com/training/basics/firstapp/running-app.html?hl=es-419)
-
-## La aplciación tambien contiene un ejemplo de uso de google maps
 
 ## Librerías
 
@@ -40,3 +39,4 @@ Ese proyecto se realizo utilizando las siguientes librerías:
 
 ![alt tag](https://github.com/capraber/android101/blob/master/1.MainScreen.png)
 ![alt tag](https://github.com/capraber/android101/blob/master/2.Dialog.png)
+![alt tag](https://github.com/capraber/android101/blob/master/3.GoogleMapExample.png)
