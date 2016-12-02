@@ -25,6 +25,8 @@ ejemplo
 Seguir los pasos de la pagina oficial de android developer
 - [Ejecutar la aplicación](https://developer.android.com/training/basics/firstapp/running-app.html?hl=es-419)
 
+## La aplciación tambien contiene un ejemplo de uso de google maps
+
 ## Librerías
 
 Ese proyecto se realizo utilizando las siguientes librerías:
@@ -32,6 +34,7 @@ Ese proyecto se realizo utilizando las siguientes librerías:
 - [Retrofit](https://square.github.io/retrofit/)
 - [Butterknife](http://jakewharton.github.io/butterknife/)
 - [Picasso](http://square.github.io/picasso/)
+- [Google Maps](https://developers.google.com/maps/documentation/android-api/intro?hl=es-419)
 
 ## Imagenes
 
