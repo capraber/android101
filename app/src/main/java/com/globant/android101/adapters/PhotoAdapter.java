@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>{
+public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder> {
 
     private List<Item> items;
 
@@ -39,10 +39,9 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
         final Item imageInfo = items.get(position);
 
         viewHolder.id.setText(String.valueOf(imageInfo.getId()));
-        viewHolder.urlText.setText(imageInfo.getUrl());
         Picasso.with(viewHolder.image.getContext()).
                 load(imageInfo.getUrl()).resize(200, 200)
-                .into(viewHolder.image,  new ImageLoadedCallback(viewHolder.progressBar) {
+                .into(viewHolder.image, new ImageLoadedCallback(viewHolder.progressBar) {
                     @Override
                     public void onSuccess() {
                         if (viewHolder.progressBar != null) {
@@ -65,7 +64,6 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
     public static class PhotoViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.image_thumbnail) ImageView image;
-        @BindView(R.id.image_url) TextView urlText;
         @BindView(R.id.image_id) TextView id;
         @BindView(R.id.progressBar) ProgressBar progressBar;
 

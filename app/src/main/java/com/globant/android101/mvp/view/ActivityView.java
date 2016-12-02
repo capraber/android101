@@ -4,30 +4,29 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import java.lang.ref.WeakReference;
 
-public class ActivityView {
-    private WeakReference<AppCompatActivity> activityRef;
+public class ActivityView<T> {
+    private WeakReference<T> activityRef;
     private ProgressDialog progressDialog;
 
-    public ActivityView(AppCompatActivity activity) {
+    public ActivityView(T activity) {
         activityRef = new WeakReference<>(activity);
     }
 
     @Nullable
-    public AppCompatActivity getActivity() {
+    public T getActivity() {
         return activityRef.get();
     }
 
     @Nullable
     public Context getContext() {
-        return getActivity();
+        return (Context) getActivity();
     }
 
     public Resources getResources() {
-        return getActivity().getResources();
+        return getContext().getResources();
     }
 }
 

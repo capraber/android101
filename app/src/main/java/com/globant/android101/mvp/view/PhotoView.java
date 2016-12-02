@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class PhotoView extends ActivityView {
+public class PhotoView extends ActivityView<MainActivity> {
 
     @BindView(R.id.my_recycler_view) RecyclerView recyclerView;
     @BindView(R.id.progressBar) ProgressBar progressBar;
