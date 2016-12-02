@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Android 101</string>
     <string name="back">Cerrar</string>
+    <string name="title_activity_maps">Android 101 - Mapa</string>
+
+    <!--    Permissions    -->
+    <string name="permission_required_toast">No tiene permisos aceptados</string>
+    <string name="my_position">Mi posicion</string>
+
 </resources>
